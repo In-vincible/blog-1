@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<a href="/about"><h3>About</h3></a>
+		<p>Powered by Django</p>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<h3>Category</h3>
+		{% if categories %}
+		<ul class="list-unstyled">
+			{% for c in categories %}
+				<li> - <a href="{{ c.get_absolute_url }}">{{ c.name|safe }}</a></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<h3>Login</h3>
+		<p>
+			<a href="/admin">Login</a><br />
+			<a href="/admin/logout">Logout</a>
+		</p>
+	</div>
+</div>
