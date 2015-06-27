@@ -53,7 +53,7 @@ ROOT_URLCONF = 'myblog.urls'
 
 WSGI_APPLICATION = 'myblog.wsgi.application'
 
-STATIC_ROOT = 'myblog.static'
+STATIC_ROOT = '/app/static'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
