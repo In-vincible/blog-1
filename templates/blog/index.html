@@ -1,16 +1,6 @@
 {% extends "base.html" %}
 {% block title %} {% if is_category %}"{{ cate_name|safe }}" {% else %}Front Page {% endif %}{% endblock %}
-
-
-
-
 {% block content %}
-
-<!-- <div class="jumbotron">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          <iframe id="tmp_downloadhelper_iframe"></iframe>
-</div> -->
 {% if is_category %}
 <div class="well well-sm">
  There are
