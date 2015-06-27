@@ -1,4 +1,9 @@
 {% extends "blog/bootstrap_blog_template/base.html" %}
+
+{% block title %}
+{% if is_category %}"{{ cate_name|safe }}" {% else %}Front Page {% endif %}
+{% endblock%}
+
 {% block content %}
 	<!-- {% load markup %}
      <div class="blog-post">
