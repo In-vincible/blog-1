@@ -1,0 +1,39 @@
+  <div class="sidebar-module sidebar-module-inset">
+    <h4>About</h4>
+    <p>Welcome to my private blog. I begun to learn Python and Django couple of weeks ago, and then start this blog as a start point. I believe it's time to make something different and meaningful in my life.</p>
+  </div>
+<!--   <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ol class="list-unstyled">
+      <li><a href="#">March 2014</a></li>
+      <li><a href="#">February 2014</a></li>
+      <li><a href="#">January 2014</a></li>
+      <li><a href="#">December 2013</a></li>
+      <li><a href="#">November 2013</a></li>
+      <li><a href="#">October 2013</a></li>
+      <li><a href="#">September 2013</a></li>
+      <li><a href="#">August 2013</a></li>
+      <li><a href="#">July 2013</a></li>
+      <li><a href="#">June 2013</a></li>
+      <li><a href="#">May 2013</a></li>
+      <li><a href="#">April 2013</a></li>
+    </ol>
+  </div> -->
+  <div class="sidebar-module">
+    <h4>Category</h4>
+    {% if categories %}
+    <ol class="list-unstyled">
+      {% for c in categories %}
+        <li> - <a href="{{ c.get_absolute_url }}">{{ c.name|safe }}</a></li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+  </div>
+  <div class="sidebar-module">
+    <h4>Contact Me</h4>
+    <ol class="list-unstyled">
+      <li><a href="https://github.com/hustshawn">GitHub</a></li>
+      <li><a href="http://www.douban.com/people/hustshawn/">Douban</a></li>
+      <li><a href="http://weibo.com/hustshawn ">Weibo</a></li>
+    </ol>
+  </div><!-- /.blog-sidebar -->
