@@ -6,6 +6,7 @@ from django import forms
 from .models import Post, Category, About
 
 # Create your views here.
+NEW_TEMPLATE_PATH = "blog/bootstrap_blog_template/"
 
 def index(request):
 	"""
@@ -21,7 +22,7 @@ def post(request, pk):
 	"""
 	post = get_object_or_404(Post, pk=pk)
 	categories = Category.objects.all()
-	return render(request, 'blog/post.html', {'post': post, 'categories': categories})
+	return render(request, NEW_TEMPLATE_PATH + 'post.html', {'post': post, 'categories': categories})
 	# return render_to_response("blog/post.html", {'post':post}, context_instance=RequestContext(request))
 
 def category(request, pk):
@@ -37,7 +38,7 @@ def category(request, pk):
 def about(request):
 	page = About.objects.get(pk=1)
 	categories = Category.objects.all()
-	return render(request, 'blog/about.html', {'post':page, 'categories':categories})
+	return render(request, NEW_TEMPLATE_PATH +'about.html', {'post':page, 'categories':categories})
 
 
 
