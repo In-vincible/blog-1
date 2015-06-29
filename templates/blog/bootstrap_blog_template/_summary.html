@@ -2,6 +2,7 @@
 <div class="post">
 	<h2>{{ post.title }}</h2>
 	<div class="info">{{ post.author.username }}  {{ post.pub_date | date:"Y/m/d H:i" }}</div>
-	<div class="content">{{ post.content|truncatechars:500|markdown2|safe }}</div>
-	<a href="{{ post.get_absolute_url }}">read more...</a>
+	<div class="content">{{ post.content|truncatechars:500|markdown2|safe }}	
+	<a href="{{ post.get_absolute_url }}" class="read-more-link" >read more...</a>
+	</div>
 </div>
