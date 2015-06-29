@@ -89,7 +89,7 @@ h6, .h6 {
   font-size: 60px;
   font-weight: normal;
 }
-.blog-description, .post-description {
+.blog-description {
   font-size: 20px;
   color: #999;
 }
@@ -98,14 +98,12 @@ h6, .h6 {
 /*
  * Main column and sidebar layout
  */
-<<<<<<< HEAD
 .post-description {
   font-size: 15px;
   color: #999;
   border-bottom: 1px solid #DDD8CC;
 }
-=======
->>>>>>> parent of d088313... added boarder within posts
+
 
 .blog-main {
   font-size: 18px;
