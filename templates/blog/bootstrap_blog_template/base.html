@@ -1,4 +1,4 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -8,17 +8,21 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="{{ STATIC_URL }}todc-bootstrap/img/favicon4.ico">
+    <!-- <link rel="icon" href="{{ STATIC_URL }}todc-bootstrap/img/favicon4.ico"> -->
+    <link rel="icon" href="{% static 'todc-bootstrap/img/favicon4.ico' %}">
 
     <!--     <title>Blog Template for Bootstrap</title> -->    
     <title>{% block title %}{% endblock %} | Shawn's blog</title>
 
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ STATIC_URL }}todc-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--     <link href="{{ STATIC_URL }}todc-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ -->
+     <link href="{% static 'todc-bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{ STATIC_URL }}css/blog.css" rel="stylesheet">
+    <!-- <link href="{{ STATIC_URL }}css/blog.css" rel="stylesheet"> -->
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
   </head>
 
   <body>
@@ -72,7 +76,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="{{ STATIC_URL }}todc-bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="{{ STATIC_URL }}todc-bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="{% static 'todc-bootstrap/js/bootstrap.min.js' %}"></script>
     <!-- Placed at the end of the document so the pages load faster -->
     <!--<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
