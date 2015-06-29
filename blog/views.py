@@ -9,17 +9,18 @@ from .models import Post, Category, About
 NEW_TEMPLATE_PATH = "blog/bootstrap_blog_template/"
 
 def index(request):
-	"""
+	'''
 	Display blog list
-	"""
+	'''
 	posts = Post.objects.all()
 	categories = Category.objects.all()
-	return render(request, 'blog/bootstrap_blog_template/index.html', {'posts': posts, 'categories': categories})
+	# return render(request, 'blog/bootstrap_blog_template/index.html', {'posts': posts, 'categories': categories})
+	return render(request, NEW_TEMPLATE_PATH + 'index.html', {'posts': posts, 'categories': categories})
 
 def post(request, pk):
-	"""
+	'''
 	Article detail
-	"""
+	'''
 	post = get_object_or_404(Post, pk=pk)
 	categories = Category.objects.all()
 	return render(request, NEW_TEMPLATE_PATH + 'post.html', {'post': post, 'categories': categories})
@@ -28,7 +29,12 @@ def post(request, pk):
 def category(request, pk):
 	cate = get_object_or_404(Category, pk=pk)
 	posts = cate.post_set.all()
-	return render(request, 'blog/index.html',
+	# return render(request, 'blog/index.html',
+	# 	{'posts': posts,
+	# 	'cate_name': cate.name,
+	# 	'is_category': True,
+	# 	'categories': Category.objects.all()})
+	return render(request, NEW_TEMPLATE_PATH + 'index.html',
 		{'posts': posts,
 		'cate_name': cate.name,
 		'is_category': True,

@@ -89,9 +89,11 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, "static"),
 # )
 
+# Can modify this to change the default template folder
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates"),
 )
+
 
 TEMPLATE_URL = 'templates/blog/bootstrap_blog_template/'
 
