@@ -89,19 +89,26 @@ h6, .h6 {
   font-size: 60px;
   font-weight: normal;
 }
-.blog-description, .post-description {
+.blog-description {
   font-size: 20px;
   color: #999;
+  border-bottom: 1px solid #DDD8CC;
 }
 
 
 /*
  * Main column and sidebar layout
  */
+.post-description {
+  font-size: 15px;
+  color: #999;
+}
 
 .blog-main {
   font-size: 18px;
   line-height: 1.5;
+  border-bottom:1px solid #DDD8CC;
+  overflow:hidden;
 }
 
 /* Sidebar modules for boxing content */
