@@ -13,7 +13,9 @@
   
     <title>{% block title %}{% endblock %} | Shawn's blog</title>
     {% include "css.html" %}
-
+    <style> 
+    {% block style %}{% endblock %}
+    </style>
 
   </head>
 
@@ -23,15 +25,15 @@
       <div class="container">
         <nav class="blog-nav">
           {% block nav %}
-          <a class="blog-nav-item active" href="/" id="home">Home</a>
+          <a class="blog-nav-item active" href="{% url 'index' %}" id="home">Home</a>
 <!--      <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a> -->
           <a class="blog-nav-item" href="{% url 'about' %}">About</a>
           {% endblock %}
         </nav>
-      </div>
-    </div>
+      </div> <!-- .contenter -->
+    </div><!-- .blog-masthead -->
 
     <div class="container">
       <div class="blog-header">
@@ -54,19 +56,16 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           {% block sidebar %}
           {% endblock %}
+        </div>
 
       </div><!-- /.row -->
-
     </div><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
-
-    {% include 'javascript.html' %}
   </body>
+
+
+  {% include 'footer.html' %}
+
+  {% include 'javascript.html' %}
+  <script type="text/javascript">  {% block javascript %}{% endblock %}</script>
+  
 </html>

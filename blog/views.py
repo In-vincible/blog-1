@@ -6,7 +6,8 @@ from django import forms
 from .models import Post, Category, About
 
 # Create your views here.
-NEW_TEMPLATE_PATH = "blog/bootstrap_blog_template/"
+
+# NEW_TEMPLATE_PATH = "blog/bootstrap_blog_template/"
 
 def index(request):
 	'''

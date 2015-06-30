@@ -104,6 +104,9 @@ h6, .h6 {
   border-bottom: 1px solid #DDD8CC;
 }
 
+.post {
+  padding-bottom: 0.5cm;
+}
 
 .blog-main {
   font-size: 18px;

@@ -5,10 +5,7 @@
 {% endblock%}
 
 {% block nav %}
-          <a class="blog-nav-item" href="/" id="home">Home</a>
-<!--      <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a> -->
+          <a class="blog-nav-item" href="{% url 'index' %}" id="home">Home</a>
           <a class="blog-nav-item active" href="{% url 'about' %}">About</a>
 {% endblock %}
 
