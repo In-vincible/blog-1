@@ -15,7 +15,7 @@ def index(request):
 	posts = Post.objects.all()
 	categories = Category.objects.all()
 	# return render(request, 'blog/bootstrap_blog_template/index.html', {'posts': posts, 'categories': categories})
-	return render(request, NEW_TEMPLATE_PATH + 'index.html', {'posts': posts, 'categories': categories})
+	return render(request, 'index.html', {'posts': posts, 'categories': categories})
 
 def post(request, pk):
 	'''
