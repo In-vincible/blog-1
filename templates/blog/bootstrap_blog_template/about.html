@@ -4,6 +4,14 @@
 {% if is_category %}"{{ cate_name|safe }}" {% else %}About {% endif %}
 {% endblock%}
 
+{% block nav %}
+          <a class="blog-nav-item" href="/" id="home">Home</a>
+<!--      <a class="blog-nav-item" href="#">New features</a>
+          <a class="blog-nav-item" href="#">Press</a>
+          <a class="blog-nav-item" href="#">New hires</a> -->
+          <a class="blog-nav-item active" href="{% url 'about' %}">About</a>
+{% endblock %}
+
 {% block content %}
 {% load markup %}
 <div class="post">

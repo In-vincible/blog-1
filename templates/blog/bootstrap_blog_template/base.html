@@ -22,11 +22,13 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
+          {% block nav %}
           <a class="blog-nav-item active" href="/" id="home">Home</a>
 <!--      <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
           <a class="blog-nav-item" href="#">New hires</a> -->
           <a class="blog-nav-item" href="{% url 'about' %}">About</a>
+          {% endblock %}
         </nav>
       </div>
     </div>

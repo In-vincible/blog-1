@@ -23,7 +23,7 @@ def post(request, pk):
 	'''
 	post = get_object_or_404(Post, pk=pk)
 	categories = Category.objects.all()
-	return render(request, NEW_TEMPLATE_PATH + 'post.html', {'post': post, 'categories': categories})
+	return render(request, 'post.html', {'post': post, 'categories': categories})
 	# return render_to_response("blog/post.html", {'post':post}, context_instance=RequestContext(request))
 
 def category(request, pk):
@@ -34,7 +34,7 @@ def category(request, pk):
 	# 	'cate_name': cate.name,
 	# 	'is_category': True,
 	# 	'categories': Category.objects.all()})
-	return render(request, NEW_TEMPLATE_PATH + 'index.html',
+	return render(request, 'index.html',
 		{'posts': posts,
 		'cate_name': cate.name,
 		'is_category': True,
@@ -44,7 +44,8 @@ def category(request, pk):
 def about(request):
 	page = About.objects.get(pk=1)
 	categories = Category.objects.all()
-	return render(request, NEW_TEMPLATE_PATH +'about.html', {'post':page, 'categories':categories})
+	# return render(request, NEW_TEMPLATE_PATH +'about.html', {'post':page, 'categories':categories})
+	return render(request, 'about.html', {'post':page, 'categories':categories})
 
 
 

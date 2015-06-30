@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block title %}
-{% if is_category %}"{{ cate_name|safe }}" {% else %}Front Page {% endif %}
+{% if is_category %}"{{ cate_name|safe }}" {% else %}Home {% endif %}
 {% endblock%}
+
+{% block nav %}{{ block.super }}{% endblock %}
+
 
 {% block content %}
 	<!-- {% load markup %}
