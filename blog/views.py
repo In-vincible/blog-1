@@ -64,19 +64,20 @@ def create(request):
 	return render(request, 'post_create.html', context)
 
 def edit(request, pk):
-	instance = get_object_or_404(Post, pk)
-	form = CreatePostForm(request.POST or None)
-	context = {'form':form}
+	if pk:
+		instance = get_object_or_404(Post, pk=pk)
+	else:
+		instance = None
 
-	print(form)
-	# print(form.cleaned_data)
-	# data = form.save(submit=False)
-	# if form.is_valid():
-	# 	for key, value in form.cleaned_data.iteritems():
-	# 		instance['key'] = value
-	# 	form.save()
-	# 	return HttpResponseRedirect('/post/' + str(request.pk))
-
+	if request.method == 'POST':
+		form = CreatePostForm(request.POST, instance=instance)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/post/' + str(pk))
+	form = CreatePostForm(instance=instance)
+	
+	context = {'form': form
+	}
 	return render(request, 'post_edit.html', context)
 
 

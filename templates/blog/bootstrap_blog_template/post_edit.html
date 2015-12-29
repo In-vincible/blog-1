@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 {% if is_category %}"{{ cate_name|safe }}" {% else %}About {% endif %}
@@ -14,9 +15,13 @@
 
 <form method='POST' action='#'>{% csrf_token %}
 
-{{form.as_p}}
+	{{form | crispy}}
 
-<button type='submit'>Submit</button>
+
+	<div class="form-actions">
+	  <button type="submit" class="btn btn-primary">Save changes</button>
+	  <button type="button" class="btn" onclick="javascript:window.location='/'">Cancel</button>
+	</div>
 </form>
 {% endblock %}
 
