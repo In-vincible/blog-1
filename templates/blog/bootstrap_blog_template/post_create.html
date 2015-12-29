@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+{% if is_category %}"{{ cate_name|safe }}" {% else %}About {% endif %}
+{% endblock%}
+
+{% block nav %}
+          <a class="blog-nav-item" href="{% url 'index' %}" id="home">Home</a>
+          <a class="blog-nav-item" href="{% url 'about' %}">About</a>
+{% endblock %}
+
+{% block content %}
+{% load markup %}
+
+<form method='POST' action='#'>{% csrf_token %}
+
+{{form | crispy}}
+
+<button type='submit' class='btn btn-primary btn-sm'>Submit</button>
+</form>
+{% endblock %}
+
+{% block sidebar %}
+{% include "sidebar.html" %}
+{% endblock %}

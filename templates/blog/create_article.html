@@ -1,11 +1,14 @@
+{% load crispy_forms_tags %}
 <html>
 <head>
 	<title>Create Article</title>
 </head>
 <body>
-	<form action="." method="POST">
+	<div class='row'>
+		<form action="." method="POST">
 		{% csrf_token %}
-		{{ form.as_p }}
-	</form>
+		{{ form | crispy}}
+		</form>
+	</div>
 </body>
 </html>
