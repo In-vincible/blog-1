@@ -81,6 +81,25 @@ def edit(request, pk):
 	return render(request, 'post_edit.html', context)
 
 
+def sign_in(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            return HttpResponseRedirect('/')
+
+            # Redirect to a success page.
+        else:
+            return HttpResponseRedirect('/')
+            ...
+    else:
+    	return HttpResponseRedirect('/')
+
+def logout_view(request):
+    logout(request)
+
 
 
 

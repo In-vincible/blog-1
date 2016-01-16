@@ -1,6 +1,8 @@
 from django import forms
+from django.contrib.auth.models import User
 
 from .models import Post
+
 
 class CreatePostForm(forms.ModelForm):
 
@@ -15,3 +17,8 @@ class CreatePostForm(forms.ModelForm):
 	# def get_author(self):
 	# 	author = request.user
 	# 	return author
+class LoginForm(forms.ModelForm):
+
+	class Meta:
+		model = User
+		fields = ['username', 'password']
