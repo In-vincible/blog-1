@@ -1,18 +1,28 @@
 {% extends "base.html" %}
-{% block title %} {% if is_category %}"{{ cate_name|safe }}" {% else %}Front Page {% endif %}{% endblock %}
+
+<!-- page title -->
+{% block title %}
+{% if is_category %}"{{ cate_name|safe }}" {% else %}Home {% endif %}
+{% endblock%}
+
+<!-- nav-bar -->
+{% block nav %}{{ block.super }}{% endblock %}
+
+<!-- content -->
 {% block content %}
-{% if is_category %}
-<div class="well well-sm">
- There are
-<span class="label label-info">{{ posts|length}}</span> in  "{{ cate_name|safe }} "：
-</div>
-{% endif %}
-{% for post in posts %}
-<!-- {% include "blog/_post.html" %} -->
-{% include "blog/_summary.html" %}
-{% endfor %}
+
+
+{% include "_summary.html" %}
+
 {% endblock %}
 
-{% block rightside %}
-{% include "blog/_side.html" %}
+<!-- paging -->
+{% block paging %}
+{% include "paging.html"  %}
 {% endblock %}
+
+<!--  sidebar -->
+{% block sidebar %}
+{% include "sidebar.html" %}
+{% endblock %}
+

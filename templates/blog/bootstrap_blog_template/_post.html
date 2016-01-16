@@ -1,6 +1,0 @@
-{% load markup %}
-<div class="blog-post">
-	<h2>{{ post.title }}</h2>
-	<div class="lead post-description">{{ post.author.username }}  {{ post.pub_date | date:"Y/m/d H:i" }}</div>
-	<div class="blog-main">{{ post.content|markdown2|safe }}</div>
-</div>

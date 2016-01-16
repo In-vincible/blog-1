@@ -1,6 +1,12 @@
 {% load markup %}
+{% for post in posts %}
 <div class="post">
-	<h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-	<div class="info">{{ post.author.username }}  {{ post.pub_date | date:"Y/m/d H:i" }}</div>
-	<div class="content">{{ post.content|truncatechars:500|markdown2|safe }}</div>
+	<h2>{{ post.title }}</h2>
+	<div class="lead post-description">{{ post.author.username }}  {{ post.pub_date | date:"Y/m/d H:i" }}</div>
+	<div class="blog-main">{{ post.content|truncatechars:500|markdown2|safe }}	
+<!-- <a href="{{ post.get_absolute_url }}" class="read-more-link" >read more...</a> -->	
+	<a href="{% url 'post' post.pk %}" class="read-more-link" >read more...</a>
+	</div>
 </div>
+
+{% endfor %}
