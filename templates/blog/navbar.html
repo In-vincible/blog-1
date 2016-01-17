@@ -1,8 +1,5 @@
 {% block nav %}
 <a class="blog-nav-item active" href="{% url 'index' %}" id="home">Home</a>
-<!--      <a class="blog-nav-item" href="#">New features</a>
-<a class="blog-nav-item" href="#">Press</a>
-<a class="blog-nav-item" href="#">New hires</a> -->
 <a class="blog-nav-item" href="{% url 'about' %}">About</a>
 {% if not user.is_authenticated %}
 <form class='navbar-form navbar-right' method='POST' action='{% url "login" %}'>{% csrf_token %}

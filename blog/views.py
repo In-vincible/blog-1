@@ -1,6 +1,8 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
+from django.contrib.auth import authenticate, login, logout
+
 
 from .forms import CreatePostForm
 from .models import Post, Category, About
@@ -47,10 +49,11 @@ def category(request, pk):
 
 
 def about(request):
-	page = About.objects.get(pk=1)
+	page = About.objects.last()
 	categories = Category.objects.all()
 	context = {
-		'post':page, 'categories':categories
+		'post':page, 
+		'categories':categories
 	}
 	return render(request, 'about.html', context)
 
