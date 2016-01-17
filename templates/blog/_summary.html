@@ -5,7 +5,7 @@
 	<div class="lead post-description">{{ post.author.username }}  {{ post.pub_date | date:"Y/m/d H:i" }}</div>
 	<div class="blog-main">{{ post.content|truncatechars:500|markdown2|safe }}	
 <!-- <a href="{{ post.get_absolute_url }}" class="read-more-link" >read more...</a> -->	
-	<a href="{% url 'post' post.pk %}" class="read-more-link" >read more...</a>
+	<a href="{% url 'post' post.slug %}" class="read-more-link" >read more...</a>
 	</div>
 </div>
 

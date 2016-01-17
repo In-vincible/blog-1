@@ -8,7 +8,7 @@ class CreatePostForm(forms.ModelForm):
 
 	class Meta:
 		model = Post
-		fields = ['title','author', 'po_type', 'content']
+		fields = ['title', 'title_en','author', 'po_type', 'content']
 
 	# def clean_content(self):
 	# 	content = self.cleaned_data('content')

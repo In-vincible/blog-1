@@ -23,11 +23,11 @@ def index(request):
 	}
 	return render(request, 'index.html', context)
 
-def post(request, pk):
+def post(request, slug):
 	'''
 	Article detail
 	'''
-	post = get_object_or_404(Post, pk=pk)
+	post = get_object_or_404(Post, slug=slug)
 	categories = Category.objects.all()
 	context = {
 		'post': post, 
@@ -66,9 +66,9 @@ def create(request):
 	context = {'form': form}
 	return render(request, 'post_create.html', context)
 
-def edit(request, pk):
-	if pk:
-		instance = get_object_or_404(Post, pk=pk)
+def edit(request, slug):
+	if slug:
+		instance = get_object_or_404(Post, slug=slug)
 	else:
 		instance = None
 
@@ -76,7 +76,7 @@ def edit(request, pk):
 		form = CreatePostForm(request.POST, instance=instance)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('/post/' + str(pk))
+			return HttpResponseRedirect('/post/' + str(slug))
 	form = CreatePostForm(instance=instance)
 	
 	context = {'form': form
