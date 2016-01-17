@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib.auth.models import User
-
 from .models import Post
 
 
@@ -8,7 +7,7 @@ class CreatePostForm(forms.ModelForm):
 
 	class Meta:
 		model = Post
-		fields = ['title', 'title_en','author', 'po_type', 'content']
+		fields = ['title', 'title_en', 'author', 'po_type', 'content', 'tags']
 
 	# def clean_content(self):
 	# 	content = self.cleaned_data('content')
