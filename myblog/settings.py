@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'crispy_forms',
+    'taggit',
 
     'blog',
 )
@@ -110,8 +111,11 @@ TEMPLATE_URL = 'templates/blog/'
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
+# For 'crispy-forms' style
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+# For 'django-taggit' setttings
+TAGGIT_CASE_INSENSITIVE = True
 
 
 try:
