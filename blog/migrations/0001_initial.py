@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('title_en', models.CharField(max_length=128, verbose_name='title_en')),
                 ('content', models.TextField(verbose_name='content')),
                 ('pub_date', models.DateTimeField(auto_now_add=True)),
-                ('slug', models.SlugField(allow_unicode=True, editable=False)),
+                ('slug', models.SlugField(editable=False)),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
                 ('po_type', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='blog.Category', verbose_name='Category')),
             ],

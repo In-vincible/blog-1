@@ -27,7 +27,7 @@ class Post(models.Model):
     content = models.TextField(u"content")
     pub_date = models.DateTimeField(auto_now_add=True)
     po_type = models.ForeignKey(Category, verbose_name=u'Category', blank=True, null=True)
-    slug = models.SlugField(allow_unicode=True, editable=False)
+    slug = models.SlugField(editable=False)
     tags = TaggableManager()
 
     class Meta:

@@ -96,7 +96,7 @@ def sign_in(request):
             # Redirect to a success page.
         else:
             return HttpResponseRedirect('/')
-            ...
+            
     else:
     	return HttpResponseRedirect('/')
 
